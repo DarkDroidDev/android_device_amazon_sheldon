@@ -137,12 +137,6 @@ on init
 #INTERNAL_END
 
 
-# Healthd can trigger a full boot from charger mode by signaling this
-# property when the power button is held.
-on property:sys.boot_from_charger_mode=1
-    class_stop charger
-    trigger late-init
-
 # Load properties from /system/ + /factory after fs mount.
 on load_system_props_action
     load_system_props
